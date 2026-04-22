@@ -1,0 +1,32 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: dockerfile
+    ports:
+      - "8081:8081"
+    environment:
+      - NODE_ENV=development
+      - EXPO_DEVTOOLS_LISTEN_ADDRESS=0.0.0.0
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    # command: npx expo start --tunnel --clear
+    command: npx expo start --lan --clear
+
+  # Add backend service below when ready
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - frontend
+
+    volumes:
+      - ./backend:/app
+      - ./backend/data:/app/data
+    
+    env_file:
+      - .env
