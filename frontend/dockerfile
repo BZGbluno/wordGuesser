@@ -19,5 +19,6 @@ COPY . .
 # Expose the port your application runs on
 EXPOSE 8081
 
+#   command: npx expo start --clear --tunnel
 # Command to run your application
-CMD ["npx", "expo", "start"]
+CMD ["npx", "expo", "start", "--clear", "--tunnel"]

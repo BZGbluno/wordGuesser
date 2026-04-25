@@ -4,6 +4,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Home from "./index";
 import SinglePlayer from "./SinglePlayer";
+import Multiplayer from "./Multiplayer";
+import MultiplayerJoin from "./MultiplayerJoin";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +20,16 @@ export default function App() {
         <Stack.Screen
           name="SinglePlayer"
           component={SinglePlayer}
+        />
+
+        <Stack.Screen
+          name="Multiplayer"
+          component={Multiplayer}
+        />
+
+        <Stack.Screen
+          name="MultiplayerJoin"
+          component={MultiplayerJoin}
         />
 
       </Stack.Navigator>

@@ -15,7 +15,11 @@ app.include_router(hint_router)
 
 # Change this to match your frontend port (8081)
 origins = [
-    "http://localhost:8081"
+    "http://localhost:8081",
+    "exp://hu8ei14-anonymous-8081.exp.direct",
+    "exp://njwzizw-anonymous-8081.exp.direct",
+    "exp://vo9uq8o-anonymous-8081.exp.direct",
+    "exp://ajkwc1q-anonymous-8081.exp.direct"
 ]
 
 # Add CORS middleware to allow frontend to connect

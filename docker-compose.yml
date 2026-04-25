@@ -12,7 +12,9 @@ services:
       - ./frontend:/app
       - /app/node_modules
     # command: npx expo start --tunnel --clear
-    command: npx expo start --lan --clear
+    command: npx expo start --clear --tunnel
+    stdin_open: true
+    tty: true
 
   # Add backend service below when ready
   backend:
